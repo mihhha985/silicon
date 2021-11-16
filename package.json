@@ -1,0 +1,26 @@
+{
+  "name": "silicon-dolls",
+  "version": "1.0.0",
+  "description": "sex dolls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "mihhha",
+  "license": "ISC",
+  "dependencies": {
+    "client-sessions": "^0.8.0",
+    "cookie-parser": "^1.4.5",
+    "cookies": "^0.8.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.12",
+    "nodemailer": "^6.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}

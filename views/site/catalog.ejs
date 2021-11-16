@@ -1,0 +1,61 @@
+<%- include('../layout/header.ejs') %>
+
+<section id="catalog">
+    <h3 class="headline"><%= headline %></h3>
+    <div class="catalog-container">
+
+        <% for(let item of result) {%>
+            <a href="/view/<%= item.id %>" class="catalog-item">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <img src="/image/models/<%= item.category %>/<%= item.name %>/ava.jpg" alt="секс кукла"/>
+                <div class="catalog-item-price">
+                    <h4>Модель: <%= item.name %></h4>
+                    <p>Цена: <%= item.price %>&#8381;</p>
+                    <button>Подробнее</button>
+                </div>
+            </a>
+        <% }%>
+    </div>
+</section>
+<section id="voice">
+    <h3 class="headline">Последние отзывы</h3>
+    <div class="voice-container">
+        <div class="voice-item">
+            <span class="quote">"</span>
+            <p>Получил куклу. Всё, как заказывал. Все пожелания реализованы. Отличное обслуживание! Вы очень внимательны
+            к своим покупателям. Думаю, каждый клиент для вас, как единственный. Вы заслуживаете, больше, чем добрые слова</p>
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <h4>Антон, 24 года</h4>
+        </div>
+        <div class="voice-item">
+            <span class="quote">"</span>
+            <p>Получил куклу. Всё, как заказывал. Все пожелания реализованы. Отличное обслуживание! Вы очень внимательны
+                к своим покупателям. Думаю, каждый клиент для вас, как единственный. Вы заслуживаете, больше, чем добрые слова</p>
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <h4>Антон, 24 года</h4>
+        </div>
+        <div class="voice-item">
+            <span class="quote">"</span>
+            <p>Получил куклу. Всё, как заказывал. Все пожелания реализованы. Отличное обслуживание! Вы очень внимательны
+                к своим покупателям. Думаю, каждый клиент для вас, как единственный. Вы заслуживаете, больше, чем добрые слова</p>
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <h4>Антон, 24 года</h4>
+        </div>
+        <div class="voice-item">
+            <span class="quote">"</span>
+            <p>Получил куклу. Всё, как заказывал. Все пожелания реализованы. Отличное обслуживание! Вы очень внимательны
+                к своим покупателям. Думаю, каждый клиент для вас, как единственный. Вы заслуживаете, больше, чем добрые слова</p>
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <h4>Антон, 24 года</h4>
+        </div>
+    </div>
+    <a href="#" class="voice-link">Все отзывы >>></a>
+</section>
+<script type="module">
+
+</script>
+
+<%- include('../layout/footer.ejs') %>

@@ -1,0 +1,103 @@
+<%- include('../layout/header.ejs') %>
+
+<section>
+    <h3 class="headline"><%= headline %></h3>
+    <div class="voice-container">
+        <% for(let item of result) { %>
+            <div class="voice-item" data-text="<%= item.text %>">
+                <span class="quote">"</span>
+                <p><%= item.text.substr(0, 180) + '...' %></p>
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <h4><%= item.name %>, <%= item.age %> года</h4>
+            </div>
+        <% } %>
+    </div>
+    <h3 class="headline">Оставьте Ваш отзыв</h3>
+    <div class="voice-form-container">
+        <div class="voice-form-text">
+            <p>Мы будем очень Вам пизнательны если вы оставите, отзыв и поделитесь с остальными посетителями нашего сайта своими впечатлениями о нашей продукции...
+                Мы обязательно опубликуем Ваш отзыв если он не содержит оскорбительных выражений или призывов к насилию и разного рода дискриминации.
+                Спасибо за понимание!!!</p>
+        </div>
+        <div class="voice-form-box">
+            <form id="voice-form" method="post" action="/voice/add">
+                <div class="voice-input-box">
+                    <input type="text" name="name" placeholder="Имя">
+                </div>
+                <div class="voice-input-box">
+                    <input type="text" name="age" placeholder="Возраст">
+                </div>
+                <div class="voice-input-box">
+                    <textarea name="message"></textarea>
+                </div>
+                <div class="voice-submit-box">
+                    <input type="submit" value="Отправить" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<section id="advantages">
+    <h3 class="headline">Преимущества</h3>
+    <div class="advantages-container">
+        <div class="advantages-box">
+            <div class="advantages-item">
+                <ion-icon name="heart-circle-outline"></ion-icon>
+                <h4>Все модели вcегда в наличии и ждут своего владельца</h4>
+            </div>
+            <div class="advantages-item">
+                <ion-icon name="heart-circle-outline"></ion-icon>
+                <h4>Отправляем на следующий день после подтверждения</h4>
+            </div>
+            <div class="advantages-item">
+                <ion-icon name="heart-circle-outline"></ion-icon>
+                <h4>Упаковка не содержит опозновательных знаков</h4>
+            </div>
+            <div class="advantages-item">
+                <ion-icon name="heart-circle-outline"></ion-icon>
+                <h4>Доставка по росии занимает до 10 дней</h4>
+            </div>
+            <div class="advantages-item">
+                <ion-icon name="heart-circle-outline"></ion-icon>
+                <h4>Гарантия на всю продукцию 6 месяцев</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="module">
+    $('.voice-item').on('click', function(e){
+        let $this = $(this);
+        let $body = $('body')
+        let $clone = $this.clone();
+        let text = $this.data('text');
+        let $box = $('<div class="full-item-box" />');
+        let $close = $('<ion-icon class="full-item-close" name="close-circle-outline"></ion-icon>');
+        $clone.find('p').text(text);
+        $clone.addClass('full-item');
+        $clone.removeClass('voice-item');
+        $body.css('overflow', 'hidden');
+        $body.append($clone, $box,  $close);
+        if($(window).width() > 480){
+            $clone.css({
+                'width': '380px',
+                'height': '480px'
+            });
+        }else{
+            $clone.css({
+                'width': '320px',
+                'height': '420px'
+            });
+        }
+
+        $close.on('click', function (){
+            $(this).remove();
+            $box.remove();
+            $clone.remove();
+            $body.css('overflow', '');
+        })
+    });
+
+
+</script>
+
+<%- include('../layout/footer.ejs') %>

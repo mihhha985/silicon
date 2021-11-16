@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/views.css">
+    <link rel="stylesheet" href="/css/lightGallery.css" />
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<header id="head">
+    <div class="head-logo-box">
+        <a href="/" class="logo-title">Silicon Dolls</a>
+        <span class="logo-phone"><ion-icon name="call"></ion-icon>8-928-428-72-50</span>
+        <span class="mobile-menu"><ion-icon name="grid-outline"></ion-icon></span>
+    </div>
+    <menu class="head-menu-box">
+        <% menu.forEach(item => { %>
+            <a href="<%= item.link %>" class="<%= (url === item.link) ? 'active' : null %>">
+                <div class="icon">
+                    <ion-icon name="<%= item.icon %>"></ion-icon>
+                    <ion-icon name="<%= item.icon %>"></ion-icon>
+                </div>
+                <div class="name">
+                    <span data-text="<%= item.title %>"><%= item.title%></span>
+                </div>
+            </a>
+        <% })%>
+    </menu>
+</header>
