@@ -10,7 +10,7 @@ const params = require('./config/params');
 const Models = require('./models/models');
 const Comment = require('./models/comment');
 const Params = require('./models/params');
-const PORT = 3000;
+const PORT = 80 | process.env.PORT;
 const app = express();
 const db = "mongodb+srv://mihhha1985:nintendo27@cluster0.axbjz.mongodb.net/silicon-dolls?retryWrites=true&w=majority";
 
