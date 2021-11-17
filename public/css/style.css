@@ -447,12 +447,10 @@ div::-webkit-scrollbar-thumb {
     position: absolute;
     left: 30%;
     bottom: 25%;
-    z-index: 1000;
+    z-index: 1;
 }
 
 #question-form {
-    z-index: 1000;
-    position:relative;
     width: 420px;
     background: rgba(255, 255, 255, .1);
     border-radius: 10px;

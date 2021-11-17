@@ -24,8 +24,10 @@ class Mailer{
             return 'Предоплата';
         }else if(this.desk == 2){
             return 'Наложка';
-        }else{
+        }else if(this.desk == 3){
             return 'Без оплаты';
+        }else{
+            return 'Вопрос'
         }
     }
 
@@ -39,6 +41,14 @@ class Mailer{
             </p>`;
     }
 
+    getQustionMessage(timeafter, timebefore){
+        return `<h3>Новая заявка</h3>
+            <p>ФИО: ${this.name}<br />
+            Телефон: ${this.phone}<br />
+            Время: с ${timeafter} до ${timebefore}
+            </p>`;
+    }
+
     send() {
         this.transporter.sendMail({
             from: "silicondollls@yandex.ru",
@@ -47,6 +57,17 @@ class Mailer{
             html: this.getMessage()
         });
     }
+
+    questionSend(timeafter, timebefore){
+        this.transporter.sendMail({
+            from: "silicondollls@yandex.ru",
+            to: "barbie-gl@yandex.ru",
+            subject: "Перезвони",
+            html: this.getQustionMessage(timeafter, timebefore)
+        });
+    }
+
+
 }
 
 module.exports = Mailer;

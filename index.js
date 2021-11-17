@@ -171,7 +171,18 @@ app.post('/order-send', (req, res) => {
     }else {
         res.redirect('/order');
     }
-})
+});
+
+app.post('/question-send', (req, res) => {
+     //console.log(req.body);
+    let name = req.body.name;
+    let phone = req.body.phone;
+    let timeafter = req.body.timeafter;
+    let timebefore = req.body.timebefore;
+    const mailer = new Mailer(null, name, phone);
+    mailer.questionSend(timeafter, timebefore);
+    res.status(200).json({status: 'success'});
+});
 
 app.get('/thank', (req, res) => {
     let url = '/';

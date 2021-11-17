@@ -1,14 +1,14 @@
 <section id="question">
     <div class="question-container">
         <h3>Остались вопросы</h3>
-        <form id="question-form" method="post">
+        <form id="question-form" method="post" action="/question-send">
             <h4>Заполните форму</h4>
             <p>И мы перезвоним в любое удобное для Вас время</p>
             <div class="input-box">
-                <input type="text" name="name" value="Имя"/>
+                <input type="text" name="name" placeholder="Имя" required/>
             </div>
             <div class="input-box">
-                <input type="text" name="phone" value="Телефон"/>
+                <input type="text" name="phone" placeholder="Телефон" required/>
             </div>
             <div class="input-box input-number">
                 <label>C:</label>
@@ -56,6 +56,7 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="../js/scrollreveal.min.js"></script>
-<script src="../js/main.js" type="module"></script>
+<script src="../js/menu.js" type="module"></script>
+<script src="../js/site.js" type="module"></script>
 </body>
 </html>

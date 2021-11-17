@@ -15,20 +15,22 @@
     <h3 class="headline">Оставьте Ваш отзыв</h3>
     <div class="voice-form-container">
         <div class="voice-form-text">
-            <p>Мы будем очень Вам пизнательны если вы оставите, отзыв и поделитесь с остальными посетителями нашего сайта своими впечатлениями о нашей продукции...
+            <p>
+                Мы будем очень Вам пизнательны если вы оставите, отзыв и поделитесь с остальными посетителями нашего сайта своими впечатлениями о нашей продукции...
                 Мы обязательно опубликуем Ваш отзыв если он не содержит оскорбительных выражений или призывов к насилию и разного рода дискриминации.
-                Спасибо за понимание!!!</p>
+                Спасибо за понимание!!!
+            </p>
         </div>
         <div class="voice-form-box">
-            <form id="voice-form" method="post" action="/voice/add">
+            <form id="voice-form" method="post">
                 <div class="voice-input-box">
-                    <input type="text" name="name" placeholder="Имя">
+                    <input type="text" name="name" placeholder="Имя" required >
                 </div>
                 <div class="voice-input-box">
-                    <input type="text" name="age" placeholder="Возраст">
+                    <input type="text" name="age" placeholder="Возраст" required>
                 </div>
                 <div class="voice-input-box">
-                    <textarea name="message"></textarea>
+                    <textarea name="message" placeholder="Ваш отзыв" required></textarea>
                 </div>
                 <div class="voice-submit-box">
                     <input type="submit" value="Отправить" />
@@ -97,7 +99,36 @@
         })
     });
 
+    $('#voice-form').on('submit', function (e){
+        e.preventDefault();
+        let $body = $('body');
+        let $box = $('<div class="full-item-box" />');
+        let $close = $('<ion-icon class="full-item-close" name="close-circle-outline"></ion-icon>');
+        let $modal = $('<div class="full-item" />');
+        $modal.html('<ion-icon name="checkmark-circle-outline"></ion-icon><p>Ваше сообщение успешно отправленно!!!</p>');
+        $body.append($modal, $box, $close);
+        $body.css('overflow', 'hidden');
+        if ($(window).width() > 480) {
+            $modal.css({
+                'width': '380px',
+                'height': '280px'
+            });
+        } else {
+            $modal.css({
+                'width': '320px',
+                'height': '200px'
+            });
+        }
 
+        $close.on('click', function () {
+            $(this).remove();
+            $box.remove();
+            $modal.remove();
+            $body.css('overflow', '');
+        });
+
+        return false;
+    })
 </script>
 
 <%- include('../layout/footer.ejs') %>
