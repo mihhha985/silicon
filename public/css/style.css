@@ -38,6 +38,12 @@ div::-webkit-scrollbar-thumb {
     border:2px solid var(--background-top);
 }
 
+::placeholder {color: #fff}
+::-webkit-input-placeholder{color:#fff}
+::-moz-placeholder{color:#fff}
+:-moz-placeholder{color:#fff}
+:-ms-input-placeholder{color:#fff}
+
 .layout {
     width: 1200px;
     margin: 0 auto;

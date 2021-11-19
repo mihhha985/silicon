@@ -230,3 +230,11 @@ app.get('/order', (req, res) => {
         res.redirect('/');
     }
 });
+
+app.use((req, res) => {
+    let url = '/';
+    let menu = params.menu;
+    let title = 'Интернет магазин Silicon Dolls - 404';
+
+    res.status(404).render(__dirname + '/views/error/index.ejs', {title, menu, url});
+})
