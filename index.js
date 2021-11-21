@@ -54,8 +54,15 @@ app.get('/women', (req, res) => {
     let title = 'Интернет магазин Silicon Dolls - Женские модели';
     let headline = 'Женские модели';
     Models.find({category:'women', status:'1'})
-        .then(result => {
-            res.render(__dirname + '/views/site/catalog.ejs', {title, headline, menu, url, result});
+        .then(model => {
+            Comment.find().limit(4)
+                .then(comment => {
+                    res.render(__dirname + '/views/site/catalog.ejs', {title, headline, menu, url, model, comment});
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.end('Connection error')
+                })
         })
         .catch(err => {
             console.log(err);
@@ -71,8 +78,15 @@ app.get('/men', (req, res) => {
     let headline = 'Мужские модели';
 
     Models.find({category:'men', status:'1'})
-        .then(result => {
-            res.render(__dirname + '/views/site/catalog.ejs', {title, headline, menu, url, result});
+        .then(model => {
+            Comment.find().limit(4)
+                .then(comment => {
+                    res.render(__dirname + '/views/site/catalog.ejs', {title, headline, menu, url, model, comment});
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.end('Connection error')
+                })
         })
         .catch(err => {
             console.log(err);

@@ -227,7 +227,6 @@ div::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 40px;
 }
 
 .title-box h1 {
@@ -421,22 +420,24 @@ div::-webkit-scrollbar-thumb {
 #question {
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 6rem;
-    height: 120vh;
     background-image: linear-gradient(45deg, rgba(134, 20, 206, 0.6), rgba(250, 0, 87, 0.6)), url(../image/head.jpg);
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
     overflow: hidden;
+    padding:0 20% 15rem;
+}
+
+.question-container{
+    z-index:1;
 }
 
 #question h3 {
     color: var(--white-color);
     font-family: var(--font-family-link);
     font-size: 3.5rem;
-    margin-bottom: 2rem;
+    margin: 0;
+    padding-top: 1rem;
     text-transform: uppercase;
     text-shadow: -5px 15px 25px rgba(0, 0, 0, .5);
 }
@@ -447,13 +448,6 @@ div::-webkit-scrollbar-thumb {
     background: var(--white-color) d87;
     bottom: 10px;
     right: 40%;
-}
-
-.question-container {
-    position: absolute;
-    left: 30%;
-    bottom: 25%;
-    z-index: 1;
 }
 
 #question-form {
@@ -568,7 +562,7 @@ div::-webkit-scrollbar-thumb {
 .footer-wave {
     position: absolute;
     width: 100%;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
 }
 
@@ -645,6 +639,18 @@ footer .menu li a:hover {
         width: 360px;
         height: 420px;
     }
+
+    #question {
+        position: relative;
+        display: flex;
+        background-image: linear-gradient(45deg, rgba(134, 20, 206, 0.6), rgba(250, 0, 87, 0.6)), url(../image/head.jpg);
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        overflow: hidden;
+        padding:0 20% 12rem;
+    }
+
 }
 
 @media (max-width: 1240px) {
@@ -684,6 +690,18 @@ footer .menu li a:hover {
     .question-container {
         bottom: 15%
     }
+
+    #question {
+        position: relative;
+        display: flex;
+        background-image: linear-gradient(45deg, rgba(134, 20, 206, 0.6), rgba(250, 0, 87, 0.6)), url(../image/head.jpg);
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        overflow: hidden;
+        padding:0 15% 10rem;
+    }
+
 }
 
 
@@ -759,6 +777,19 @@ footer .menu li a:hover {
         width: auto
     }
 
+    #main {
+        position: relative;
+        width: 100%;
+        height: 90vh;
+    }
+
+    .wave-revers {
+        position: absolute;
+        width: 100%;
+        bottom: -15px;
+        left: 21%;
+    }
+
     .title-box h1 {
         font-size: 8rem
     }
@@ -815,15 +846,6 @@ footer .menu li a:hover {
         margin-bottom: 1rem;
     }
 
-    .question-container {
-        width: 60%;
-        position: absolute;
-        left: 50%;
-        bottom: 15%;
-        transform: translateX(-50%);
-        z-index: 1000;
-    }
-
     #question-form {
         width: 380px;
         background: rgba(255, 255, 255, .1);
@@ -838,6 +860,16 @@ footer .menu li a:hover {
         margin: 0 5px
     }
 
+    #question {
+        position: relative;
+        display: flex;
+        background-image: linear-gradient(45deg, rgba(134, 20, 206, 0.6), rgba(250, 0, 87, 0.6)), url(../image/head.jpg);
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        overflow: hidden;
+        padding:0 10% 8rem;
+    }
 }
 
 @media (max-width: 764px) {
@@ -849,6 +881,13 @@ footer .menu li a:hover {
 
     .title-box h3 {
         font-size: 1.5rem;
+    }
+
+    .wave-revers {
+        position: absolute;
+        width: 100%;
+        bottom: -10px;
+        left: 21%;
     }
 
     .description-box-left {
@@ -901,16 +940,17 @@ footer .menu li a:hover {
 
     #question h3 {
         font-size: 2.4rem;
-        margin-bottom: 1rem;
     }
 
-    .question-container {
-        width: 80%;
-        position: absolute;
-        left: 50%;
-        bottom: 15%;
-        transform: translateX(-50%);
-        z-index: 1000;
+    #question {
+        position: relative;
+        display: flex;
+        background-image: linear-gradient(45deg, rgba(134, 20, 206, 0.6), rgba(250, 0, 87, 0.6)), url(../image/head.jpg);
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        overflow: hidden;
+        padding:0 10% 6rem;
     }
 
     footer {
@@ -926,6 +966,13 @@ footer .menu li a:hover {
 
     footer .menu li{
         display:block;
+    }
+
+    .footer-wave-revers {
+        position: absolute;
+        width: 100%;
+        bottom: -15px;
+        left: 25%;
     }
 }
 
@@ -980,5 +1027,25 @@ footer .menu li a:hover {
 
     input-box input[type="number"] {
         width: 90px;
+    }
+
+    #main {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .wave-revers {
+        position: absolute;
+        width: 100%;
+        bottom: -5px;
+        left: 21%;
+    }
+
+    .footer-wave-revers {
+        position: absolute;
+        width: 100%;
+        bottom: -5px;
+        left: 25%;
     }
 }
