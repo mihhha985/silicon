@@ -1,3 +1,5 @@
+const path = require("path");
+
 function trimUrl(url) {
    let pos = url.indexOf('?');
    if(pos === -1){
@@ -16,8 +18,13 @@ function trimBeforeSlash(url) {
    }
 }
 
+function createPath(catalog, file){
+   return path.resolve(__dirname, '../views', catalog, `${file}.ejs`);
+}
+
 
 module.exports = {
    trimUrl,
    trimBeforeSlash,
+   createPath,
 };

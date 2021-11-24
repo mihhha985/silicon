@@ -1,0 +1,36 @@
+User-agent: Yandex
+Disallow: /*?*
+Disallow: /*%
+Disallow: /?
+Disallow: *?s=
+Disallow: *&s=
+Disallow: /search
+Disallow: *utm*=
+Disallow: /*?page=
+Disallow: /*&page=
+Disallow: */page/
+Disallow: */tag/*
+Sitemap: https://silicon-dolls.ru/sitemap.xml
+
+User-agent: Googlebot
+Disallow: /*?*
+Disallow: /*%
+Disallow: /?
+Disallow: *?s=
+Disallow: *&s=
+Disallow: /search
+Disallow: *utm*=
+Disallow: /*?page=
+Disallow: /*&page=
+Disallow: */page/
+Disallow: */tag/*
+Sitemap: https://silicon-dolls.ru/sitemap.xml
+
+User-agent: *
+Disallow: /*?*
+Disallow: /*%
+Disallow: /?
+Disallow: *?s=
+Disallow: *&s=
+Disallow: /search
+Disallow: *utm*=
