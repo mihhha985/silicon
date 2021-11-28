@@ -1,3 +1,5 @@
+import {Modal} from './classes/modal.js';
+let modal = new Modal();
 let form = document.getElementById('question-form');
 let inputText = form.querySelectorAll('input[type="text"]');
 let inputNumber = form.querySelectorAll('input[type="number"]');
@@ -52,33 +54,7 @@ form.addEventListener('submit', function(e){
         },
         body: JSON.stringify(post)
     }).then(() => {
-        let $body = $('body');
-        let $box = $('<div class="full-item-box" />');
-        let $close = $('<ion-icon class="full-item-close" name="close-circle-outline"></ion-icon>');
-        let $modal = $('<div class="full-item" />');
-        $modal.html('<ion-icon name="checkmark-circle-outline"></ion-icon><p>Ваше сообщение успешно отправленно!!!</p>');
-        $body.append($modal, $box, $close);
-        $body.css('overflow', 'hidden');
-        if ($(window).width() > 480) {
-            $modal.css({
-                'width': '380px',
-                'height': '280px'
-            });
-        } else {
-            $modal.css({
-                'width': '320px',
-                'height': '200px'
-            });
-        }
-
-        $close.on('click', function () {
-            $(this).remove();
-            $box.remove();
-            $modal.remove();
-            $body.css('overflow', '');
-        });
-
-        return false;
+        modal.openVoiceForm('DIV');
     });
 })
 

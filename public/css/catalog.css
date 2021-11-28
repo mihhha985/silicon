@@ -128,7 +128,6 @@
 
 .catalog-item img{
     width:100%;
-    height: 600px;
 }
 
 .catalog-item-price{
@@ -192,22 +191,22 @@
 }
 
 .full-item{
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) !important;
-    z-index: 1000;
+    width:0;
     background: linear-gradient( to top, var(--background-bottom), var(--background-top));
     color: var(--white-color);
     padding: 40px 20px;
     font-size: 1.4rem;
     font-family: var(--font-family-text);
-    box-shadow: -10px 25px 50px rgba(0, 0, 0, .2);
-    cursor: pointer;
+    box-shadow: -10px 25px 50px rgba(0, 0, 0, .5);
+    transition-property: width;
+    transition-duration: 1s;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--background-bottom) var(--background-top);
+    border-radius:20px;
+    z-index: 1000;
 }
 
 div::-webkit-scrollbar {
@@ -236,16 +235,23 @@ div::-webkit-scrollbar-thumb {
 
 .full-item-box{
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:30px 0;
     top:0;
     left:0;
     width:100%;
     height:100%;
     background: rgba(255, 255, 255, .8);
+    scrollbar-width: thin;
+    scrollbar-color: var(--background-bottom) var(--background-top);
+    overflow: auto;
     z-index: 999;
 }
 
 .full-item-close{
-    position: fixed;
+    position: absolute;
     top:10px;
     right:10px;
     font-size:40px;
@@ -272,6 +278,14 @@ div::-webkit-scrollbar-thumb {
 }
 
 .voice-item .quote {
+    font-size: 160px;
+    line-height: 40px;
+    display: block;
+    position: relative;
+    top: 20px;
+}
+
+.full-item .quote {
     font-size: 160px;
     line-height: 40px;
     display: block;
@@ -424,6 +438,13 @@ div::-webkit-scrollbar-thumb {
         height:380px;
         width:480px;
     }
+
+    .catalog-item:hover .catalog-item-price{
+        row-gap: 1rem;
+        justify-content: flex-start;
+        top:78%;
+    }
+
 }
 
 @media (max-width:992px) {
@@ -463,6 +484,12 @@ div::-webkit-scrollbar-thumb {
         padding: .5rem 0;
         row-gap: .5rem;
         transition: .5s;
+    }
+
+    .catalog-item:hover .catalog-item-price{
+        row-gap: .5rem;
+        justify-content: flex-start;
+        top:75%;
     }
 
     .voice-container {
@@ -517,6 +544,13 @@ div::-webkit-scrollbar-thumb {
         position: relative;
         height:480px;
         width:600px;
+    }
+
+    .full-item-box {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
     }
 
 }
@@ -588,5 +622,25 @@ div::-webkit-scrollbar-thumb {
         position: relative;
         height:480px;
         width:100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .full-item-close {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        font-size: 30px;
+        color: var(--font-color);
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    .full-item {
+        color: var(--white-color);
+        font-size: 1.2rem;
+        font-family: var(--font-family-text);
+        text-align: center;
     }
 }

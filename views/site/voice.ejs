@@ -4,7 +4,7 @@
     <h3 class="headline"><%= headline %></h3>
     <div class="voice-container">
         <% for(let item of result) { %>
-            <div class="voice-item" data-text="<%= item.text %>">
+            <div class="voice-item" data-text="<%= item.text %>" data-name="<%= item.name %>" data-age="<%= item.age %>">
                 <span class="quote">"</span>
                 <p><%= item.text.substr(0, 180) + '...' %></p>
                 <ion-icon name="person-circle-outline"></ion-icon>
@@ -16,7 +16,7 @@
     <div class="voice-form-container">
         <div class="voice-form-text">
             <p>
-                Мы будем очень Вам пизнательны если вы оставите, отзыв и поделитесь с остальными посетителями нашего сайта своими впечатлениями о нашей продукции...
+                Мы будем очень Вам признательны если вы оставите, отзыв и поделитесь с остальными посетителями нашего сайта своими впечатлениями о нашей продукции...
                 Мы обязательно опубликуем Ваш отзыв если он не содержит оскорбительных выражений или призывов к насилию и разного рода дискриминации.
                 Спасибо за понимание!!!
             </p>
@@ -45,7 +45,7 @@
         <div class="advantages-box">
             <div class="advantages-item">
                 <ion-icon name="heart-circle-outline"></ion-icon>
-                <h4>Все модели вcегда в наличии и ждут своего владельца</h4>
+                <h4>Все модели всегда в наличии и ждут своего владельца</h4>
             </div>
             <div class="advantages-item">
                 <ion-icon name="heart-circle-outline"></ion-icon>
@@ -53,11 +53,11 @@
             </div>
             <div class="advantages-item">
                 <ion-icon name="heart-circle-outline"></ion-icon>
-                <h4>Упаковка не содержит опозновательных знаков</h4>
+                <h4>Упаковка не содержит опознавательных знаков</h4>
             </div>
             <div class="advantages-item">
                 <ion-icon name="heart-circle-outline"></ion-icon>
-                <h4>Доставка по росии занимает до 10 дней</h4>
+                <h4>Доставка по россии занимает до 10 дней</h4>
             </div>
             <div class="advantages-item">
                 <ion-icon name="heart-circle-outline"></ion-icon>
