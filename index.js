@@ -4,6 +4,7 @@ const Cookie = require('cookies');
 const session = require('express-session');
 const siteRouter = require('./rotes/site-routes');
 const orderRouter = require('./rotes/order-routes');
+const {menu} = require('./config/params');
 
 const PORT = 80 | process.env.PORT;
 const app = express();
@@ -36,9 +37,39 @@ app.listen(PORT, err => {
 app.use(siteRouter);
 app.use(orderRouter);
 
+app.get('/robots.txt', (req, res) => {
+
+    let fileName = __dirname + '/robots.txt';
+    res.status(200);
+    res.sendFile(fileName,  (err) => {
+        if (err) {
+            console.log(new Error('Фаил не найден'));
+            res.redirect('/error');
+        }
+    })
+});
+
+app.get('/sitemap.xml', (req, res) => {
+
+    let fileName = __dirname + '/sitemap.xml';
+    res.status(200);
+    res.sendFile(fileName,  (err) => {
+        if (err) {
+            console.log(new Error('Фаил не найден'));
+            res.redirect('/error');
+        }
+    })
+});
+
+app.get('/error', (req, res) => {
+    let url = '/';
+    let title = 'Интернет магазин Silicon Dolls - 404';
+
+    res.status(404).render(__dirname + '/views/error/index.ejs', {title, menu, url});
+})
+
 app.use((req, res) => {
     let url = '/';
-    let menu = params.menu;
     let title = 'Интернет магазин Silicon Dolls - 404';
 
     res.status(404).render(__dirname + '/views/error/index.ejs', {title, menu, url});

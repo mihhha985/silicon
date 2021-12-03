@@ -5,6 +5,7 @@ Disallow: /?
 Disallow: *?s=
 Disallow: *&s=
 Disallow: /search
+Disallow: /error
 Disallow: *utm*=
 Disallow: /*?page=
 Disallow: /*&page=
@@ -19,6 +20,7 @@ Disallow: /?
 Disallow: *?s=
 Disallow: *&s=
 Disallow: /search
+Disallow: /error
 Disallow: *utm*=
 Disallow: /*?page=
 Disallow: /*&page=
@@ -33,4 +35,5 @@ Disallow: /?
 Disallow: *?s=
 Disallow: *&s=
 Disallow: /search
+Disallow: /error
 Disallow: *utm*=

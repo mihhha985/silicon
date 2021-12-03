@@ -66,6 +66,42 @@ div::-webkit-scrollbar-thumb {
     --background-bottom: #8614ce;
 }
 
+.mobile-phone-button{
+    display: block;
+    background: #fa0057;
+    color: #fff;
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    text-align:center;
+    line-height:85px;
+    font-size:40px;
+    cursor:pointer;
+    opacity:0.6;
+    box-shadow:0 0 30px rgba(0, 0, 0, 0.8);
+    animation:shadow 5s linear infinite;
+}
+
+.mobile-phone-button:hover{
+    box-shadow:none;
+    opacity:1;
+}
+
+@keyframes shadow{
+    0% {
+        box-shadow:0 0 3px rgba(0, 0, 0, 0.8);
+    }
+    50%{
+        box-shadow:0 0 30px rgba(0, 0, 0, 0.8);
+    }
+    100%{
+        box-shadow:0 0 3px rgba(0, 0, 0, 0.8);
+    }
+}
+
 /*   header menu   */
 
 #head {
@@ -977,6 +1013,16 @@ footer .menu li a:hover {
 }
 
 @media (max-width: 480px) {
+
+    .mobile-phone-button{
+        width:50px;
+        height:50px;
+        border-radius:50%;
+        bottom:10px;
+        right:10px;
+        line-height:54px;
+        font-size:30px;
+    }
 
     .title-box h1 {
         font-size: 3.8rem;
