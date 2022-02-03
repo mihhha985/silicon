@@ -8,7 +8,6 @@
 
 .catalog-item{
     width:400px;
-    height:600px;
     position:relative;
     background: var(--font-color);
     color: var(--white-color);
@@ -127,6 +126,7 @@
 }
 
 .catalog-item img{
+    display:block;
     width:100%;
 }
 
