@@ -19,12 +19,14 @@ const orderSend = (req, res) => {
 
     const mailer = new Mailer(desk, name, phone, message, model, ip);
     mailer.send();
-
+		res.redirect('/thank');
+		/*
     if(desk === '3'){
         res.redirect('/thank');
     }else {
         res.redirect('/order');
     }
+		*/
 }
 
 const questionSend = (req, res) => {

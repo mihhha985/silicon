@@ -92,7 +92,7 @@ const getContact = (req, res) => {
 }
 
 const getViews = (req, res) => {
-    let title = 'Силиконовая секс кукла';
+    //let title = 'Силиконовая секс кукла';
     let id = req.params.id;
     let menu = params.menu;
     Models.findById(id)

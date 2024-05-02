@@ -9,13 +9,13 @@ class Mailer{
        this.model = model;
        this.ip = ip;
        this.transporter =  nodemailer.createTransport({
-           host: "smtp.yandex.ua",
-           port: 465,
-           secure: true, // true for 465, false for other ports
-           auth: {
-               user: 'silicondollls', // generated ethereal user
-               pass: 'xmbrjsghxjhmieyk', // generated ethereal password
-           },
+				host: 'smtp.yandex.ru',
+				port: 465,
+				secure: true,
+				auth: {
+					user: 'mihhha985',
+					pass: 'mxqpwejraivtwjcu',
+				},
        });
     }
 
@@ -51,8 +51,8 @@ class Mailer{
 
     send() {
         this.transporter.sendMail({
-            from: "silicondollls@yandex.ru",
-            to: "barbie-gl@yandex.ru",
+            from: "mihhha985@yandex.ru",
+            to: "biketoff.m@yandex.ru",
             subject: this.getSubject(),
             html: this.getMessage()
         });
@@ -60,8 +60,8 @@ class Mailer{
 
     questionSend(timeafter, timebefore){
         this.transporter.sendMail({
-            from: "silicondollls@yandex.ru",
-            to: "barbie-gl@yandex.ru",
+            from: "mihhha985@yandex.ru",
+            to: "biketoff.m@yandex.ru",
             subject: "Перезвони",
             html: this.getQustionMessage(timeafter, timebefore)
         });
